@@ -14,8 +14,6 @@ install:
   - 7z x apache-ant-1.9.7-bin.zip > nul
   - md lzma
   - cd lzma
-  - ps: Start-FileDownload 'http://www.7-zip.org/a/lzma1514.7z'
-  - ls
   - cd ..\
   - set PATH=%ANDROID_HOME%\tools;%PATH%;%ANT_HOME%\bin;%WIX_HOME%\bin;C:\lzma\bin;
   - ps: Start-FileDownload 'http://www.crummy.com/software/BeautifulSoup/bs4/download/4.4/beautifulsoup4-4.4.1.tar.gz'
