@@ -12,6 +12,8 @@ install:
   - ps: "[Net.ServicePointManager]::SecurityProtocol = 'Tls12'"
   - ps: Start-FileDownload 'http://www.eu.apache.org/dist//ant/binaries/apache-ant-1.9.7-bin.zip'
   - 7z x apache-ant-1.9.7-bin.zip > nul
+  - ps: Start-FileDownload 'http://www.7-zip.org/a/lzma1514.7z' -Timeout 1000000
+  - 7z x lzma1514.7z
   - md lzma
   - cd lzma
   - cd ..\
