@@ -6,14 +6,6 @@ environment:
     - ANDROID_HOME: C:\Program Files (x86)\Android\android-sdk
       ANT_HOME: C:\apache-ant-1.9.7
       TEST_SCRIPT: "nodeunit_test"
-    - WIX_HOME: C:\Program Files (x86)\WiX Toolset v3.10
-      TEST_SCRIPT: "windows_test"
-    - ANDROID_HOME: C:\Program Files (x86)\Android\android-sdk
-      ANT_HOME: C:\apache-ant-1.9.7
-      TEST_SCRIPT: "android_test_32bit"
-    - ANDROID_HOME: C:\Program Files (x86)\Android\android-sdk
-      ANT_HOME: C:\apache-ant-1.9.7
-      TEST_SCRIPT: "android_test_64bit"
 
 install:
   - cd \
@@ -37,15 +29,6 @@ install:
 test_script:
   - if "%TEST_SCRIPT%" == "nodeunit_test" (
       npm test
-    )
-  - if "%TEST_SCRIPT%" == "windows_test" (
-      python lint.py -p windows
-    )
-  - if "%TEST_SCRIPT%" == "android_test_32bit" (
-      python lint.py -p android -a 32bit
-    )
-  - if "%TEST_SCRIPT%" == "android_test_64bit" (
-      python lint.py -p android -a 64bit
     )
 
 build: off
